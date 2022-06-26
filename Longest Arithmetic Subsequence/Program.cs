@@ -18,11 +18,14 @@ namespace Longest_Arithmetic_Subsequence
   {
     public int LongestArithSeqLength(int[] nums)
     {
+
       // the idea is here at each index we will calculate the diff bw current index - previous index no. 
       // we update the dictinary with the diff as key and value as 2 at any index.
       // why value 2 ??? coz atleast we need two element to get the diff and if all the diffs are unique still our result should be 2 atleast.
       // at any inedx, the diff frequency is stored in dictionary of diff as key
       // if we have found the same diff again then will add +1 with the last diff key value.
+      // Time = O(n^2)
+      // Space = O(n^2)
       int longest = 0;
       Dictionary<int, int>[] dp = new Dictionary<int, int>[nums.Length];
       for (int i = 0; i < nums.Length; i++)
